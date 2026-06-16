@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Playfair_Display } from 'next/font/google'
+import { Geist, Geist_Mono, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -8,41 +8,21 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 })
-const playfair = Playfair_Display({
-  variable: '--font-playfair',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
   subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
-  title: 'Maren — Considered Clothing',
+  title: 'VELTRIX — Unlimited Entertainment',
   description:
-    'Maren is a minimalist clothing studio making considered, everyday essentials in natural fabrics.',
+    'VELTRIX is a premium digital marketplace for streaming, AI, and gaming subscriptions. Instant access, secure payments, 24/7 support.',
   generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'dark',
+  themeColor: '#0a0a0b',
 }
 
 export default function RootLayout({
@@ -53,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} bg-background`}
+      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         {children}

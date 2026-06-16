@@ -1,32 +1,56 @@
+import { VeltrixLogo } from '@/components/veltrix-logo'
+
 const columns = [
-  { title: "Shop", links: ["New In", "Clothing", "Knitwear", "Accessories"] },
-  { title: "About", links: ["Our Story", "Materials", "Sustainability", "Stockists"] },
-  { title: "Help", links: ["Shipping", "Returns", "Size Guide", "Contact"] },
+  {
+    title: 'Services',
+    links: ['Streaming', 'AI Tools', 'Gaming', 'Music', 'VPN'],
+  },
+  {
+    title: 'Company',
+    links: ['About', 'Why Veltrix', 'Reviews', 'Careers'],
+  },
+  {
+    title: 'Support',
+    links: ['Help Center', 'Contact', 'FAQ', 'Status'],
+  },
+  {
+    title: 'Legal',
+    links: ['Terms', 'Privacy', 'Refunds', 'Cookies'],
+  },
 ]
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <p className="font-serif text-2xl tracking-tight">Maren</p>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Considered, everyday essentials made from natural fabrics in
-              limited runs.
+    <footer className="relative overflow-hidden border-t border-border">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -top-24 mx-auto h-48 w-3/4 rounded-full opacity-40 blur-[100px]"
+        style={{
+          background:
+            'radial-gradient(circle, color-mix(in oklch, var(--gold) 18%, transparent), transparent 70%)',
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-4 py-14">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
+          <div className="lg:col-span-2">
+            <VeltrixLogo />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              The next generation digital marketplace for premium entertainment,
+              AI and gaming. Unlimited, instant, elite.
             </p>
           </div>
+
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <h4 className="font-heading text-sm font-semibold text-foreground">
                 {col.title}
               </h4>
-              <ul className="mt-4 flex flex-col gap-3">
+              <ul className="mt-4 space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm text-foreground transition-colors hover:text-accent"
+                      className="text-sm text-muted-foreground transition-colors hover:text-gold"
                     >
                       {link}
                     </a>
@@ -36,9 +60,13 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-14 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Maren Studio. All rights reserved.</p>
-          <p>Made with considered care.</p>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row">
+          <p>© {new Date().getFullYear()} VELTRIX. All rights reserved.</p>
+          <p>
+            Crafted for the future of digital entertainment ·{' '}
+            <span className="text-gold">veltrix.me</span>
+          </p>
         </div>
       </div>
     </footer>
