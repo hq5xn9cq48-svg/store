@@ -24,7 +24,7 @@ export function VeltrixLogo({
           src={veltrixArtwork}
           alt=""
           sizes="84px"
-          className="absolute -left-5 -top-[18px] h-[84px] w-[84px] max-w-none mix-blend-lighten"
+          className="absolute -left-5 -top-[18px] h-[84px] w-[84px] max-w-none mix-blend-screen"
         />
       </span>
       {showWordmark && (
