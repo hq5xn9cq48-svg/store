@@ -40,11 +40,13 @@ export function ContactSection() {
                   hello@veltrix.me
                 </a>
                 <a
-                  href="#contact"
+                  href="https://wa.me/212631948474"
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center gap-3 rounded-xl border border-border bg-secondary px-4 py-3 text-sm text-foreground transition-colors hover:border-[color:var(--gold)]/40"
                 >
                   <MessageCircle className="h-4 w-4 text-gold" />
-                  Live chat — available 24/7
+                  WhatsApp: 0631948474
                 </a>
               </div>
             </div>
